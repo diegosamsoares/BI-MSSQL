@@ -1,0 +1,141 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/WEB-INF/template.xhtml">
+
+	<ui:define name="title">Graficos</ui:define>
+
+
+
+	<ui:define name="content">
+	<style>
+li{
+float:left;
+display: inline;
+
+}
+ul {
+	list-style: none;
+	padding: 0px;
+	
+}
+
+
+
+</style>
+<div class="card">
+
+		<h:form>
+    <p:growl id="msgs" showDetail="true" />
+ 
+    <p:panel header="Selecione os filtos desejados" style="margin-bottom:10px;">
+    <h:panelGrid columns="10" cellpadding="10">
+   
+       <h:outputLabel for="menu" value="UF" />
+        <p:selectCheckboxMenu id="menu" value="#{checkboxViewFiltros.selectedCities}" label=""
+                              filter="true" filterMatchMode="startsWith" panelStyle="width:150px">
+            <f:selectItems value="#{checkboxViewFiltros.cities}" />
+        </p:selectCheckboxMenu>
+        
+    <h:outputLabel for="menu" value="FORMA" />
+        <p:selectCheckboxMenu id="menu2" value="#{checkboxViewFiltros.selectedCities}" label=""
+                              filter="true" filterMatchMode="startsWith" panelStyle="width:500px">
+            <f:selectItems value="#{checkboxViewFiltros.carteiras}" />
+        </p:selectCheckboxMenu>
+        
+        
+       <p:outputLabel for="menu" value="DATA:" />
+        <p:calendar id="button" value="#{calendarView.date3}" showOn="button" />
+        </h:panelGrid>
+ 
+        <p:separator />
+ 
+        <p:commandButton value="Filtrar" update="msgs" actionListener="#{dropdownView.displayLocation}" icon="ui-icon-check" />
+    </p:panel>
+</h:form>
+
+
+
+</div>
+
+
+
+		<div class="ui-g dashboard">
+		
+
+		
+	
+
+			<div class="ui-g-12 ui-md-4">
+				<div class="card overview">
+					<div class="overview-content clearfix">
+						<span class="overview-title">Sales</span> <span
+							class="overview-badge">+%90</span> <span class="overview-detail">$22,650
+							/ week</span>
+					</div>
+					<div class="overview-footer">
+						<p:graphicImage name="images/dashboard/sales.svg"
+							library="ultima-layout" style="width: 100%" />
+					</div>
+				</div>
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<div class="card overview">
+					<div class="overview-content clearfix">
+						<span class="overview-title">Views</span> <span
+							class="overview-badge">+%60</span> <span class="overview-detail">6,520
+							/ day</span>
+					</div>
+					<div class="overview-footer">
+						<p:graphicImage name="images/dashboard/views.svg"
+							library="ultima-layout" style="width: 100%" />
+					</div>
+				</div>
+			</div>
+			<div class="ui-g-12 ui-md-4">
+				<div class="card overview">
+					<div class="overview-content clearfix">
+						<span class="overview-title">Users</span> <span
+							class="overview-badge">+%45</span> <span class="overview-detail">5,200
+							/ day</span>
+					</div>
+					<div class="overview-footer">
+						<p:graphicImage name="images/dashboard/progress.svg"
+							library="ultima-layout" style="width: 100%" />
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+			<div class="ui-g-12 ui-lg-6">
+				<div class="card ">
+
+					<h1 class="centerText">Gráfico de linhas</h1>
+					<p:chart id="line" type="line" model="#{graficos.lineModel}"
+						responsive="true" />
+
+				</div>
+
+			</div>
+
+
+			<div class="ui-g-12 ui-lg-6">
+				<div class="card ">
+
+					<h1 class="centerText">Outro Grafico</h1>
+					<p:chart id="line2" type="line" model="#{graficos.lineModel}"
+						responsive="true" />
+
+				</div>
+			</div>
+
+		</div>
+
+
+	</ui:define>
+
+</ui:composition>

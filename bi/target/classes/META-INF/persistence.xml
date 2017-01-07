@@ -1,0 +1,40 @@
+
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+       http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+
+	<persistence-unit name="usuarios">
+ 
+		<!-- provedor/implementacao do JPA -->
+		 <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<!-- entidade mapeada -->
+		<class>relatoriosgraficos.Usuario</class>
+
+		<properties>
+
+			<property name="javax.persistence.jdbc.driver"
+				value="com.microsoft.sqlserver.jdbc.SQLServerDriver"></property>
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:sqlserver://DIEGO-PC:1433;databaseName=BDTESTE"></property>
+			<property name="javax.persistence.jdbc.user" value="sa"></property>
+			<property name="javax.persistence.jdbc.password" value="123"></property>
+
+
+
+
+			<!-- propriedades do hibernate -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect" />
+			<property name="show_sql" value="true" />
+			<property name="hibernate.temp.use_jdbc_metadata_defaults" value="false" />
+			<property name="hibernate.hbm2ddl.auto" value="create"/>
+
+			<!-- atualiza o banco, gera as tabelas se for preciso -->
+			<property name="hibernate.hbm2ddl.auto" 
+				value="update" /> 
+
+		</properties>
+	</persistence-unit>
+</persistence>

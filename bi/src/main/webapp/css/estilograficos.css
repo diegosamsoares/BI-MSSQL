@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+
+
+
+.card-w-title{
+	top: 0px;
+	margin-left: 500px;
+	background-color: white;
+	font-family: arial;
+	font-weight: bold;
+	width: 700px;
+	height:30px;
+	padding-left: 50px;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+	margin-top: 10px;
+	
+}
+li{
+	display: table;
+}
+
+body {
+	background-color: #e0e3ff;
+}
+
+.topo{
+	height: 40px;
+	width: auto;
+	background-color: black;
+	padding: 5px;
+}
+#btsair{
+	float: right;
+}
+
+#latesq {
+	float: left;
+}
+
+aside#latdir{
+	display:block;
+    width:350px;
+    float:right;
+	background-color: #dddddd;
+	padding:10px ;
+	width:1100px;
+	margin-top: 5px;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+	margin-right: 50px;
+}
+
+.row{
+	margin-right: 60px;
+}

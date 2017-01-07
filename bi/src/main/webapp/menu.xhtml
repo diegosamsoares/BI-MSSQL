@@ -1,0 +1,35 @@
+<ui:composition 
+ xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:pu="http://primefaces.org/ultima">
+    
+ <h:form>
+    <p:growl autoUpdate="true"/>
+    
+ 
+
+    <p:panelMenu style="width:300px">
+        <p:submenu label="Financeiro">
+        
+            <p:menuitem value="Financeiro" actionListener="#{menuView.save}" icon="&#xE3AE;" />
+            <p:menuitem value="Desempenho Financeiro" actionListener="#{menuView.update}"  icon="ui-icon-arrowrefresh-1-w" />
+              <p:menuitem value="Pagar x Receber" actionListener="#{menuView.update}"  icon="ui-icon-arrowrefresh-1-w" />
+        </p:submenu>
+        <p:submenu label="Vendas">
+            <p:menuitem value="Vendas Mes" actionListener="#{menuView.delete}"  ajax="false" icon="ui-icon-close"/>
+               <p:menuitem value="Comparativo Mensal" actionListener="#{menuView.delete}"  ajax="false" icon="ui-icon-close"/>
+        </p:submenu>
+        <p:separator />
+        <p:submenu label="Vendedor" >
+         <p:menuitem value="Desempenho" actionListener="#{menuView.delete}"  ajax="false" icon="ui-icon-close"/>
+               <p:menuitem value="Metas" actionListener="#{menuView.delete}"  ajax="false" icon="ui-icon-close"/>
+                <p:menuitem value="Clientes" actionListener="#{menuView.delete}"  ajax="false" icon="ui-icon-close"/>
+           
+            <p:menuitem value="Mobile" outcome="/graficos" icon="ui-icon-signal" />
+        </p:submenu>
+    </p:panelMenu>
+</h:form>
+</ui:composition>
