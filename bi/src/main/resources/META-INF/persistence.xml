@@ -18,9 +18,9 @@
 			<property name="javax.persistence.jdbc.driver"
 				value="com.microsoft.sqlserver.jdbc.SQLServerDriver"></property>
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:sqlserver://DIEGO-PC:1433;databaseName=BDTESTE"></property>
-			<property name="javax.persistence.jdbc.user" value="sa"></property>
-			<property name="javax.persistence.jdbc.password" value="123"></property>
+				value="jdbc:sqlserver://SRVBD:40222;databaseName=BDTESTE"></property>
+			<property name="javax.persistence.jdbc.user" value="usr_rcconsult"></property>
+			<property name="javax.persistence.jdbc.password" value="3st1l0"></property>
 
 
 
