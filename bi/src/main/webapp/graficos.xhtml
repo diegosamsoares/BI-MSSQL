@@ -5,41 +5,24 @@
 	xmlns:p="http://primefaces.org/ui" template="/WEB-INF/template.xhtml">
 
 	<ui:define name="title">Graficos</ui:define>
-
-
-
 	<ui:define name="content">
-	<style>
-li{
-float:left;
-display: inline;
 
-}
-ul {
-	list-style: none;
-	padding: 0px;
-	
-}
-
-
-
-</style>
-
-		<h:form>
     <p:growl id="msgs" showDetail="true" />
  
-    <p:panel header="Selecione os filtos desejados" style="margin-bottom:10px;">
-    <h:panelGrid columns="10" cellpadding="10">
-   
+    <p:panel header="Selecione os filtros desejados" style="margin-bottom:10px;">
+    <h:panelGrid columns="10" cellpadding="10" columnClasses="cssColumn1,cssColumn2">
+   		<div>
+   		
+   		</div>
        <h:outputLabel for="menu" value="UF" />
         <p:selectCheckboxMenu id="menu" value="#{checkboxViewFiltros.selectedCities}" label=""
-                              filter="true" filterMatchMode="startsWith" panelStyle="width:150px">
+                              filter="true" filterMatchMode="startsWith"  panelStyle="width:150px">
             <f:selectItems value="#{checkboxViewFiltros.cities}" />
         </p:selectCheckboxMenu>
         
     <h:outputLabel for="menu" value="FORMA" />
         <p:selectCheckboxMenu id="menu2" value="#{checkboxViewFiltros.selectedCities}" label=""
-                              filter="true" filterMatchMode="startsWith" panelStyle="width:500px">
+                              filter="true" filterMatchMode="startsWith" panelStyle="width:210px">
             <f:selectItems value="#{checkboxViewFiltros.carteiras}" />
         </p:selectCheckboxMenu>
         
@@ -47,24 +30,23 @@ ul {
        <p:outputLabel for="menu" value="DATA:" />
         <p:calendar id="button" value="#{calendarView.date3}" showOn="button" />
         </h:panelGrid>
+        
+        
  
         <p:separator />
  
         <p:commandButton value="Filtrar" update="msgs" actionListener="#{dropdownView.displayLocation}" icon="ui-icon-check" />
     </p:panel>
-    
-</h:form>
 
 
 
-
+       
 
 
 
 		<div class="ui-g dashboard">
 		
 
-		
 	
 
 			<div class="ui-g-12 ui-md-4">
@@ -112,6 +94,7 @@ ul {
 
 
 			<div class="ui-g-12 ui-lg-6">
+			 
 				<div class="card ">
 
 					<h1 class="centerText">Gráfico de linhas</h1>
